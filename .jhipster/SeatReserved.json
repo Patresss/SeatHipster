@@ -1,0 +1,42 @@
+{
+  "applications": ["SeatReservation"],
+  "changelogDate": "20220830095135",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "seat_reserved",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "fromDate",
+      "fieldType": "ZonedDateTime",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "toDate",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "createdDate",
+      "fieldType": "ZonedDateTime",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "SeatReserved",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "seat",
+      "otherEntityRelationshipName": "seatReserved",
+      "relationshipName": "seat",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

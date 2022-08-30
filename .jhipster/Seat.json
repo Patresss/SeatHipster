@@ -1,0 +1,50 @@
+{
+  "applications": ["SeatReservation"],
+  "changelogDate": "20220830094935",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "seat",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "AvailabilityStatus",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "FREE,OCCUPIED,UNAVAILABLE"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Seat",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "equipment",
+      "otherEntityRelationshipName": "seat",
+      "relationshipName": "equipments",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "seatReserved",
+      "otherEntityRelationshipName": "seat",
+      "relationshipName": "seatReserved",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "room",
+      "otherEntityRelationshipName": "seats",
+      "relationshipName": "room",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

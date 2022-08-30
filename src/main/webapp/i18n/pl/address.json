@@ -1,0 +1,28 @@
+{
+  "seatReservationApp": {
+    "address": {
+      "home": {
+        "title": "Address",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Dodaj Address",
+        "createOrEditLabel": "Dodaj lub edytuj: Address",
+        "notFound": "No Addresses found"
+      },
+      "created": "Utworzono nowy obiekt typu Address z identyfikatorem {{ param }}",
+      "updated": "Uaktualniono obiekt typu Address z identyfikatorem {{ param }}",
+      "deleted": "Usunięto obiekt typu Address z identyfikatorem {{ param }}",
+      "delete": {
+        "question": "Czy na pewno chcesz usunąć Address {{ id }}?"
+      },
+      "detail": {
+        "title": "Address"
+      },
+      "id": "ID",
+      "country": "Country",
+      "street": "Street",
+      "postalCode": "Postal Code",
+      "city": "City",
+      "stateProvince": "State Province"
+    }
+  }
+}

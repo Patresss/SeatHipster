@@ -1,0 +1,39 @@
+{
+  "applications": ["SeatReservation"],
+  "changelogDate": "20220830094735",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "floor",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "number",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Floor",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "room",
+      "otherEntityRelationshipName": "floor",
+      "relationshipName": "rooms",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "building",
+      "otherEntityRelationshipName": "floors",
+      "relationshipName": "building",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

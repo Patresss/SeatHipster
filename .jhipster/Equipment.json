@@ -1,0 +1,34 @@
+{
+  "applications": ["SeatReservation"],
+  "changelogDate": "20220830095035",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "equipment",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "type",
+      "fieldType": "EquipmentType",
+      "fieldValidateRules": ["required"],
+      "fieldValues": "MONITOR,MOUSE,KEYBOARD,HEADPHONES,DOCKING_STATION,CAMERA,NOTEBOOK"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Equipment",
+  "pagination": "pagination",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "seat",
+      "otherEntityRelationshipName": "equipments",
+      "relationshipName": "seat",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

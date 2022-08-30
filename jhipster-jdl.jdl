@@ -1,0 +1,99 @@
+
+application {
+  config {
+    baseName SeatReservation,
+    applicationType monolith,
+    packageName com.globallogic.seatreservation,
+    authenticationType session,
+    prodDatabaseType postgresql,
+    devDatabaseType	h2Disk,
+    dtoSuffix	Dto
+    clientFramework angular,
+    languages [en, pl],
+    nativeLanguage en
+  }
+  entities *
+}
+
+enum AvailabilityStatus {
+    FREE, OCCUPIED, UNAVAILABLE
+}
+
+enum EquipmentType {
+    MONITOR,
+    MOUSE,
+    KEYBOARD,
+    HEADPHONES,
+    DOCKING_STATION,
+    CAMERA,
+    NOTEBOOK
+}
+
+
+entity Location {
+	name String required
+}
+
+entity Building {
+	name String required
+}
+
+entity Floor {
+	name String required, 
+    number Integer required
+}
+
+entity Room {
+	name String required
+}
+
+entity Seat {
+	name String required,
+    description String,
+    status AvailabilityStatus required
+}
+
+entity Equipment {
+	name String required,
+    type EquipmentType required
+}
+
+
+entity SeatReserved {
+	name String required,
+    fromDate ZonedDateTime required,
+    toDate ZonedDateTime,
+    createdDate ZonedDateTime required
+}
+
+entity Address {
+	country String required
+	street String required,
+	postalCode String required,
+	city String required,
+	stateProvince String required
+}
+
+relationship OneToOne {
+	Building{address} to Address
+}
+
+relationship OneToMany {
+	Location{buildings} to Building,
+    Building{floors} to Floor,
+    Floor{rooms} to Room,
+    Room{seats} to Seat,
+    Seat{equipments} to Equipment,
+    Seat to SeatReserved{seat} 
+}
+
+relationship OneToMany {
+    Seat to SeatReserved{seat} 
+}
+
+dto * with mapstruct
+service * with serviceClass
+paginate * with pagination
+
+
+

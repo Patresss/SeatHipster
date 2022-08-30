@@ -1,0 +1,27 @@
+{
+  "seatReservationApp": {
+    "floor": {
+      "home": {
+        "title": "Floor",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Dodaj Floor",
+        "createOrEditLabel": "Dodaj lub edytuj: Floor",
+        "notFound": "No Floors found"
+      },
+      "created": "Utworzono nowy obiekt typu Floor z identyfikatorem {{ param }}",
+      "updated": "Uaktualniono obiekt typu Floor z identyfikatorem {{ param }}",
+      "deleted": "Usunięto obiekt typu Floor z identyfikatorem {{ param }}",
+      "delete": {
+        "question": "Czy na pewno chcesz usunąć Floor {{ id }}?"
+      },
+      "detail": {
+        "title": "Floor"
+      },
+      "id": "ID",
+      "name": "Name",
+      "number": "Number",
+      "rooms": "Rooms",
+      "building": "Building"
+    }
+  }
+}

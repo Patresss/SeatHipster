@@ -1,0 +1,28 @@
+{
+  "seatReservationApp": {
+    "seatReserved": {
+      "home": {
+        "title": "Seat Reserveds",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Seat Reserved",
+        "createOrEditLabel": "Create or edit a Seat Reserved",
+        "notFound": "No Seat Reserveds found"
+      },
+      "created": "A new Seat Reserved is created with identifier {{ param }}",
+      "updated": "A Seat Reserved is updated with identifier {{ param }}",
+      "deleted": "A Seat Reserved is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Seat Reserved {{ id }}?"
+      },
+      "detail": {
+        "title": "Seat Reserved"
+      },
+      "id": "ID",
+      "name": "Name",
+      "fromDate": "From Date",
+      "toDate": "To Date",
+      "createdDate": "Created Date",
+      "seat": "Seat"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "seatReservationApp": {
+    "seat": {
+      "home": {
+        "title": "Seat",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Dodaj Seat",
+        "createOrEditLabel": "Dodaj lub edytuj: Seat",
+        "notFound": "No Seats found"
+      },
+      "created": "Utworzono nowy obiekt typu Seat z identyfikatorem {{ param }}",
+      "updated": "Uaktualniono obiekt typu Seat z identyfikatorem {{ param }}",
+      "deleted": "Usunięto obiekt typu Seat z identyfikatorem {{ param }}",
+      "delete": {
+        "question": "Czy na pewno chcesz usunąć Seat {{ id }}?"
+      },
+      "detail": {
+        "title": "Seat"
+      },
+      "id": "ID",
+      "name": "Name",
+      "description": "Description",
+      "status": "Status",
+      "equipments": "Equipments",
+      "seatReserved": "Seat Reserved",
+      "room": "Room"
+    }
+  }
+}

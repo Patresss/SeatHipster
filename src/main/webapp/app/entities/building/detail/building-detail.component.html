@@ -1,0 +1,44 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="building">
+      <h2 data-cy="buildingDetailsHeading"><span jhiTranslate="seatReservationApp.building.detail.title">Building</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ building.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="seatReservationApp.building.name">Name</span></dt>
+        <dd>
+          <span>{{ building.name }}</span>
+        </dd>
+        <dt><span jhiTranslate="seatReservationApp.building.address">Address</span></dt>
+        <dd>
+          <div *ngIf="building.address">
+            <a [routerLink]="['/address', building.address.id, 'view']">{{ building.address?.id }}</a>
+          </div>
+        </dd>
+        <dt><span jhiTranslate="seatReservationApp.building.location">Location</span></dt>
+        <dd>
+          <div *ngIf="building.location">
+            <a [routerLink]="['/location', building.location.id, 'view']">{{ building.location?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/building', building.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

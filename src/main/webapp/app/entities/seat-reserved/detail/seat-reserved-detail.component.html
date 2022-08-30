@@ -1,0 +1,50 @@
+<div class="d-flex justify-content-center">
+  <div class="col-8">
+    <div *ngIf="seatReserved">
+      <h2 data-cy="seatReservedDetailsHeading"><span jhiTranslate="seatReservationApp.seatReserved.detail.title">Seat Reserved</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ seatReserved.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="seatReservationApp.seatReserved.name">Name</span></dt>
+        <dd>
+          <span>{{ seatReserved.name }}</span>
+        </dd>
+        <dt><span jhiTranslate="seatReservationApp.seatReserved.fromDate">From Date</span></dt>
+        <dd>
+          <span>{{ seatReserved.fromDate | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="seatReservationApp.seatReserved.toDate">To Date</span></dt>
+        <dd>
+          <span>{{ seatReserved.toDate | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="seatReservationApp.seatReserved.createdDate">Created Date</span></dt>
+        <dd>
+          <span>{{ seatReserved.createdDate | formatMediumDatetime }}</span>
+        </dd>
+        <dt><span jhiTranslate="seatReservationApp.seatReserved.seat">Seat</span></dt>
+        <dd>
+          <div *ngIf="seatReserved.seat">
+            <a [routerLink]="['/seat', seatReserved.seat.id, 'view']">{{ seatReserved.seat?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/seat-reserved', seatReserved.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>
